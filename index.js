@@ -1,6 +1,4 @@
 const express = require("express");
-const mysql = require('mysql');
-const jwt = require("jsonwebtoken");
 const app = express();
 const port = 8080;
 
@@ -19,3 +17,4 @@ app.use("/api/login", require("./routes/api/login"));
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
+
