@@ -1,0 +1,16 @@
+{
+  "name": "simplilearn",
+  "version": "1.0.0",
+  "description": "package JSON file",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "Aditya Kelagar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "uuid": "^9.0.0"
+  }
+}
