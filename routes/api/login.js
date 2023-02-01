@@ -6,14 +6,10 @@ const jwt = require("jsonwebtoken");
 let users = require("../../DataBase/Users");
 
 router.post("/", (req, res) => {
-  users.forEach((user) => {
-    if (user.email === req.body.email) {
-      jwt.sign({ user: user }, "secretkey", (err, token) => {
-        res.json({
-          token,
-        });
-      });
-    }
+  jwt.sign({ user: user }, "secretkey", (err, token) => {
+    res.json({
+      token,
+    });
   });
 });
 
