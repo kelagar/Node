@@ -92,3 +92,5 @@ function updateRecord(req, res) {
         }
     })
 };
+
+module.exports = router;

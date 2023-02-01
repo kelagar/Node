@@ -6,6 +6,13 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 const bodyparser = require('body-parser');
 const { extname } = require("path");
 
+//require the DB model
+require('./models/db');
+
+//require User controller
+const userController = require("./Controllers/userController");
+
+
 //create app
 const app = express();
 
@@ -41,7 +48,7 @@ app.engine('hbs', exphbs.engine({
 //Set 'view engine' to be the engine we created above called 'hbs'
 app.set('view engine', "hbs");
 
-
-
+//When url is /user -> use the User controller
+app.use("/user", userController);
 
 

@@ -1,1 +1,37 @@
-this will display the list of users in a table format
+<h3><a class = "btn btn-secondary" href="/user">Create New User</a>User List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+            First Name
+            </th>
+            <th>
+            Last Name
+            </th>
+            <th>
+            Email
+            </th>
+            <th>
+            Phone
+            </th>
+            <th>
+            City
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#{{#each  list}}
+        <tr>
+                <td>{{this.firstName}}</td>
+                <td>{{this.lastName}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{this.city}}</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/user/{{this.id}}">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/user/delete/{{this.id}}"> onclick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                </td>
+        </tr>
+        {{/each}}}}
+    </tbody>
+</table>
