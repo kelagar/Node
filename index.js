@@ -24,14 +24,14 @@ app.use(bodyparser.json());
 app.get("/", (req, res) => {
   res.send(`
   <h2>Hello World!</h2>
-  <h3>Click here to get access to the <b> <a href="/users/list">Database</a></b></h3>`);
+  <h3>Click here to get access to the <b> <a href="/user/list">Database</a></b></h3>`);
 });
 
 //Set 'views' to the path ../views/
 app.set('views', path.join(__dirname, '/views/'));
 
 //Create the app engine (usually html, but in this case its using the handlebars layout). Here we are setting setting the MainLayout as default, and other layouts can be found in '../views/layouts'
-app.engine('hbs', exphbs({
+app.engine('hbs', exphbs.engine({
   handlebars: allowInsecurePrototypeAccess(handlebars),
   extname: 'hbs',
   defaultLayout: "MainLayout",
@@ -41,10 +41,7 @@ app.engine('hbs', exphbs({
 //Set 'view engine' to be the engine we created above called 'hbs'
 app.set('view engine', "hbs");
 
-//Routes
-app.use("/api/users", require("./routes/api/users"));
-app.use("/api/companies", require("./routes/api/companies"));
-app.use("/api/login", require("./routes/api/login"));
+
 
 
 
